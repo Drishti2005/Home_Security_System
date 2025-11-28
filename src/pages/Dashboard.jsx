@@ -45,6 +45,18 @@ function Dashboard() {
     }
   };
 
+  const clearUnknownFaces = async () => {
+    if (!confirm('Clear all unknown faces? This will reset detection.')) return;
+    try {
+      const response = await api.post('/system/clear-unknown-faces');
+      alert(`✅ Cleared ${response.data.unknownFacesDeleted} unknown faces`);
+      fetchStatus();
+    } catch (error) {
+      console.error('Failed to clear:', error);
+      alert('❌ Failed to clear unknown faces');
+    }
+  };
+
   if (loading) return <div className="loading">Loading...</div>;
 
   const riskLevel = status.riskScore > 70 ? 'high' : status.riskScore > 40 ? 'medium' : 'low';
@@ -62,6 +74,9 @@ function Dashboard() {
           </button>
           <button onClick={simulateIntruder} className="btn btn-primary">
             🚨 Simulate Intruder
+          </button>
+          <button onClick={clearUnknownFaces} className="btn btn-warning">
+            🗑️ Clear Unknown Faces
           </button>
         </div>
       </div>

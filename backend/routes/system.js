@@ -1,5 +1,5 @@
 import express from 'express';
-import { Setting, Event } from '../database/init.js';
+import { Setting, Event, UnknownFace } from '../database/init.js';
 import { authenticateToken } from '../middleware/auth.js';
 import { simulateEvent } from '../services/simulator.js';
 
@@ -170,6 +170,26 @@ router.get('/house-state', authenticateToken, async (req, res) => {
   } catch (error) {
     console.error('House state error:', error);
     res.status(500).json({ error: 'Failed to get house state' });
+  }
+});
+
+// Clear unknown faces
+router.post('/clear-unknown-faces', authenticateToken, async (req, res) => {
+  try {
+    const unknownResult = await UnknownFace.deleteMany({});
+    const eventResult = await Event.deleteMany({ type: 'unknown_face' });
+    
+    console.log(`✅ Cleared ${unknownResult.deletedCount} unknown faces`);
+    console.log(`✅ Cleared ${eventResult.deletedCount} unknown face events`);
+    
+    res.json({ 
+      success: true, 
+      unknownFacesDeleted: unknownResult.deletedCount,
+      eventsDeleted: eventResult.deletedCount
+    });
+  } catch (error) {
+    console.error('Clear unknown faces error:', error);
+    res.status(500).json({ error: 'Failed to clear unknown faces' });
   }
 });
 
