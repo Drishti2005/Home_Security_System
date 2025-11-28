@@ -28,6 +28,9 @@ app.use(cors({
 app.use(express.json());
 app.use('/uploads', express.static(join(__dirname, 'uploads')));
 
+// Serve static frontend files
+app.use(express.static(join(__dirname, '../dist')));
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/system', systemRoutes);
@@ -43,6 +46,11 @@ app.get('/api/health', (req, res) => {
     database: 'mongodb',
     timestamp: new Date().toISOString() 
   });
+});
+
+// Serve frontend for all other routes
+app.get('*', (req, res) => {
+  res.sendFile(join(__dirname, '../dist/index.html'));
 });
 
 // Initialize database and start server
