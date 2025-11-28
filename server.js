@@ -1,2 +1,4 @@
-// Root server file for deployment
+import dotenv from 'dotenv';
+dotenv.config();
+
 import('./backend/server.js');
