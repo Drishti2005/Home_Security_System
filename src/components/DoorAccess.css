@@ -1,0 +1,279 @@
+.door-access {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.door-header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.door-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.door-status-display {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  color: white;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .door-status-display {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .door-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .door-status-text h2 {
+    font-size: 24px;
+  }
+}
+
+.door-icon {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.door-icon.opening {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.door-status-text h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.access-granted {
+  color: #dcfce7;
+  font-weight: 600;
+}
+
+.access-denied {
+  color: #fee2e2;
+  font-weight: 600;
+}
+
+.access-permissions {
+  margin-bottom: 24px;
+}
+
+.access-permissions h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.permissions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.permission-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .permission-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .permission-info {
+    width: 100%;
+  }
+
+  .permission-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .permission-actions button {
+    flex: 1;
+  }
+}
+
+.permission-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.permission-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  overflow: hidden;
+}
+
+.permission-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.permission-name {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 2px;
+}
+
+.permission-category {
+  font-size: 12px;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+.permission-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-access {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-access.allowed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.btn-access.allowed:hover {
+  background: #bbf7d0;
+}
+
+.btn-access.denied {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.btn-access.denied:hover {
+  background: #fecaca;
+}
+
+.btn-test {
+  padding: 8px 16px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-test:hover {
+  background: #1d4ed8;
+}
+
+.access-log {
+  margin-bottom: 24px;
+}
+
+.access-log h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.log-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.log-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.log-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.log-icon.granted {
+  color: #16a34a;
+}
+
+.log-icon.denied {
+  color: #dc2626;
+}
+
+.log-description {
+  flex: 1;
+  color: #374151;
+}
+
+.log-time {
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+

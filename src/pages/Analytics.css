@@ -1,0 +1,160 @@
+.analytics-page h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 24px;
+}
+
+.analytics-grid .card h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 24px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.risk-display {
+  text-align: center;
+  padding: 24px;
+}
+
+.risk-score {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 auto 16px;
+  color: white;
+}
+
+.risk-score.risk-low {
+  background: #16a34a;
+}
+
+.risk-score.risk-medium {
+  background: #f59e0b;
+}
+
+.risk-score.risk-high {
+  background: #dc2626;
+}
+
+.risk-level {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1f2937;
+}
+
+.risk-factors {
+  text-align: left;
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.risk-factors h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #374151;
+}
+
+.risk-factors ul {
+  list-style: none;
+  padding: 0;
+}
+
+.risk-factors li {
+  padding: 6px 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.visitors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.visitor-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.visitor-rank {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.visitor-info {
+  flex: 1;
+}
+
+.visitor-name {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 2px;
+}
+
+.visitor-category {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.visitor-count {
+  font-weight: 600;
+  color: #2563eb;
+}
+
+@media (max-width: 768px) {
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+}
