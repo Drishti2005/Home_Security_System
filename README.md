@@ -2,6 +2,9 @@
 
 Complete AI-powered security system with real-time face recognition, automatic door control, and instant Telegram alerts.
 
+## Live Demo 
+Deployed on Render: [https://home-security-system-1.onrender.com](https://home-security-system-1.onrender.com/)
+
 ## Core Features
 
 - **Live Face Recognition** - Real-time detection using TensorFlow.js
